@@ -1,0 +1,51 @@
+.Login {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-imagems {
+  top: 17px;
+  height: 277px;
+  position: relative;
+}
+.login-imagem {
+  width: 326px;
+}
+.login-container {
+  padding: 33px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px #88888824;
+}
+.login-text-linha {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.login-text {
+  font-family: cursive;
+  font-style: normal;
+}
+.login-linha {
+  border: 3px solid;
+  width: 115px;
+}
+.login-inputs-group {
+  display: flex;
+  padding: 0 154px;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-inputs {
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+}
+.login-cadastro {
+  margin: 7px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}

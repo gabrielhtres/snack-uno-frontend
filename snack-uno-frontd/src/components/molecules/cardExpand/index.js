@@ -4,7 +4,6 @@ import './index.css'
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
 import { createTheme } from '@material-ui/core/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -23,6 +22,7 @@ type Props = {
 };
 function CardExpand({ mock }: Props) {
   const [open, setOpen] = React.useState(false);
+
   const handleClick = () => {
     console.log(open)
     if (open) {
@@ -31,6 +31,7 @@ function CardExpand({ mock }: Props) {
       setOpen(true);
     }
   };
+
   return (
     <div className="CardExpand">
       <div
