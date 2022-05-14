@@ -26,9 +26,8 @@ const theme = createTheme({
 function Navegacao() {
   return (
     <div className="Navegacao">
-      <AppBar theme={theme}>
+      <AppBar theme={theme} position="static">
         <Toolbar color="secondary">
-
           <IconButton
             size="large"
             edge="start"

@@ -32,17 +32,11 @@ type Props = {
 function Cards({ mock }: Props) {
   const [expanded, setExpanded] = React.useState(false);
 
-
-
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <div>
-
-
-
         <Card sx={{ maxWidth: 340 }}>
           <CardMedia
             component="img"
@@ -56,7 +50,6 @@ function Cards({ mock }: Props) {
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
-
             <IconButton aria-label="share">
               <ShareIcon />
             </IconButton>
@@ -75,13 +68,10 @@ function Cards({ mock }: Props) {
                 Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
                 aside for 10 minutes.
               </Typography>
-
             </CardContent>
           </Collapse>
         </Card>
-      
     </div>
   );
 }
-
 export default Cards;
