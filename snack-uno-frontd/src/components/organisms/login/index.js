@@ -6,41 +6,12 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Hamburguer from '../../../assets/hamburguer-v.png'
 import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import './index.css'
-import { styled } from '@mui/material/styles';
+import BotaoLarge from '../../atoms/botaoLarge/index.js'
 
-const BootstrapButton = styled(Button)({
-  backgroundColor: 'green',
-  boxShadow: 'none',
-  textTransform: 'none',
-  fontSize: 18,
-  padding: '7px 107px',
-  borderRadius: 78,
-  fontFamily: [
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
-  ].join(','),
-  '&:hover': {
-    backgroundColor: '#376737',
-    boxShadow: 'none',
-  },
-  '&:active': {
-    boxShadow: 'none',
-    backgroundColor: '#376737',
-  },
-});
 
 function Login() {
   const [values, setValues] = React.useState({
@@ -106,7 +77,7 @@ function Login() {
               </FormControl>
             </div>
             <div className="login-inputs">
-              <BootstrapButton size="large" variant="contained">Entrar</BootstrapButton>
+              <BotaoLarge children="Entrar"/>
             </div>
             <div className="login-cadastro">
               ou
