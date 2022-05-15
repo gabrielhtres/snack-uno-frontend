@@ -10,6 +10,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Cesta from './components/organisms/cesta/index.js'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -18,6 +20,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="cadastro" element={<Cadastro />} />
         <Route path="login" element={<Login />} />
+        <Route path="minha-cesta" element={<Cesta />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

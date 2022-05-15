@@ -1,0 +1,18 @@
+.item-cesta-container {
+  height: 53px;
+  padding: 30px 30px 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 17px 165px;
+}
+.item-imagem {
+  width: 149px;
+  height: 113px;
+}
+
+.item-imagens {
+  display: flex;
+  width: 74px;
+}

@@ -1,10 +1,9 @@
 import * as React from 'react';
-import './App.css';
-import Navegacao from './components/molecules/navegacao/index.js'
-import Cards from './components/molecules/cards/index.js'
-import CardExpand from './components/molecules/cardExpand/index.js'
-import Inicial from './components/organisms/inicial/index.js'
-function App() {
+import Navegacao from '../../molecules/navegacao/index.js'
+import TituloLinha from '../../atoms/tituloLinha/index.js'
+import ItemCesta from '../../molecules/itemCesta/index.js'
+
+function Cesta() {
   let [mock] = React.useState([
     {
       nome: 'alguma comida',
@@ -44,40 +43,16 @@ function App() {
 
   ]);
   return (
-
-    <div className="App">
-      <Navegacao />
-      <Inicial />
-      <div className="lista-de-item">
-      {mock.map((mock, index) => (
-        <Cards mock={mock}/>
-      ))}
+    <div className="Cesta">
+      <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
+      <div>
+        {mock.map((mock, index) => (
+          <ItemCesta mock={mock} />
+        ))}
       </div>
 
-        <div className="lista-de-item">
-        {mock.map((mock, index) => (
-                <CardExpand mock={mock}/>
-              ))}
-        </div>
     </div>
   );
 }
 
-export default App;
-
-
-
-/* <header className="App-header">
-  <img src={logo} className="App-logo" alt="logo" />
-  <p>
-    Edit <code>src/App.js</code> and save to reload.
-  </p>
-  <a
-    className="App-link"
-    href="https://reactjs.org"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Learn React
-  </a>
-</header> */
+export default Cesta;

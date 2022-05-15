@@ -5,7 +5,6 @@ function Inicial() {
 
   return (
     <div className="Inicial">
-      inicial
     </div>
   );
 }
