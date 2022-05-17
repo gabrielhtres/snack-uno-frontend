@@ -1,7 +1,8 @@
 import * as React from 'react';
-import Navegacao from '../../molecules/navegacao/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js'
 import ItemCesta from '../../molecules/itemCesta/index.js'
+import './index.css'
+
 
 function Cesta() {
   let [mock] = React.useState([
@@ -45,6 +46,13 @@ function Cesta() {
   return (
     <div className="Cesta">
       <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
+      <div className="cesta-tipos">
+        <span>Item</span>
+        <div className="cesta-sub">
+          <span>Resumo</span>
+          <span className="cesta-sub-preco">Preço</span>
+        </div>
+      </div>
       <div>
         {mock.map((mock, index) => (
           <ItemCesta mock={mock} />

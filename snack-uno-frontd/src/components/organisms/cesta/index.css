@@ -1,0 +1,19 @@
+.cesta-tipos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.cesta-sub {
+  position: relative;
+  left: -10px;
+
+}
+.cesta-sub-preco {
+      padding-left: 201px;
+}
+
+ .cesta-tipos span {
+  font-weight: 600;
+  font-size: 20px;
+}
