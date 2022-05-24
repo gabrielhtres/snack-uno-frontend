@@ -1,19 +1,12 @@
 .cesta-tipos {
+  max-width: 1186px;
+  min-width: 1007px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
+  justify-content: space-between;
+  margin: 17px auto;
 }
-.cesta-sub {
-  position: relative;
-  left: -10px;
-
-}
-.cesta-sub-preco {
-      padding-left: 201px;
-}
-
  .cesta-tipos span {
   font-weight: 600;
   font-size: 20px;
+  padding: 0 10px;
 }

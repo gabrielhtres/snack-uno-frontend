@@ -48,10 +48,8 @@ function Cesta() {
       <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       <div className="cesta-tipos">
         <span>Item</span>
-        <div className="cesta-sub">
-          <span>Resumo</span>
-          <span className="cesta-sub-preco">Preço</span>
-        </div>
+        <span>Resumo</span>
+        <span>Preço</span>
       </div>
       <div>
         {mock.map((mock, index) => (
