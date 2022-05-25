@@ -6,6 +6,7 @@ import './index.css'
 import Motorcycle from '../../../assets/Motorcycle.png'
 import Clock from '../../../assets/Clock.png'
 import Trash from '../../../assets/trash.png'
+
 type Props = {
   mock?: Array,
 };
@@ -39,8 +40,6 @@ function IntemCesta({ mock }: Props) {
         <div className="item-preco">
           <span>R$ 5,00</span>
         </div>
-
-
       </div>
     </div>
   );

@@ -2,17 +2,13 @@ import * as React from 'react';
 import TituloLinha from '../../atoms/tituloLinha/index.js'
 import ItemCesta from '../../molecules/itemCesta/index.js'
 import './index.css'
-
+import BotaoLarge from '../../atoms/botaoLarge/index.js'
+import BotaoLink from '../../atoms/botaoLink/index.js'
+import Arrow from '../../../assets/arrow.png'
+import Breadcrumb from '../../atoms/breadcrumb/index.js'
 
 function Cesta() {
   let [mock] = React.useState([
-    {
-      nome: 'alguma comida',
-      preco: '10,00',
-      sabores: ['calabreza', 'queijo', 'frango'],
-      imagem: 'https://www.sabornamesa.com.br/media/k2/items/cache/c501a702ef05e90d163a1eeeb1633357_XL.jpg',
-      id: 1,
-    },
     {
       nome: 'alguma comida',
       preco: '10,00',
@@ -34,27 +30,52 @@ function Cesta() {
       imagem: 'https://www.mundoboaforma.com.br/wp-content/uploads/2019/08/Sandui%CC%81che-de-frango-e-legumes-com-poder-diure%CC%81tico.jpg',
       id: 4,
     },
+  ]);
+  let [breadcrumb] = React.useState([
     {
-      nome: 'alguma comida',
-      preco: '10,00',
-      sabores: ['calabreza', 'queijo', 'frango'],
-      imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
-      id: 5,
+      color: 'inherit',
+      text: 'Inicial',
+      href: '/',
+      id: 1,
     },
-
+    {
+      color: 'text.primary',
+      text: 'Minha cesta',
+      href: '/minha-cesta',
+      id: 2,
+    }
   ]);
   return (
     <div className="Cesta">
+      <div className="cesta-breadcrumbs">
+      <Breadcrumb mock={breadcrumb}/>
+      </div>
       <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
+      <div className="cesta-tipos-container">
       <div className="cesta-tipos">
         <span>Item</span>
+        <span></span>
+        <span></span>
         <span>Resumo</span>
         <span>Preço</span>
+      </div>
       </div>
       <div>
         {mock.map((mock, index) => (
           <ItemCesta mock={mock} />
         ))}
+      </div>
+      <div className="cesta-total">
+        <span>Total: R$ 10,00</span>
+      </div>
+      <div className="cesta-botoes">
+        <div className="cesta-button-voltar">
+          <img className="cesta-button-voltar-img"src={Arrow} />
+          <BotaoLink children="Voltar a tela inicial" to="/"/>
+        </div>
+        <div className="cesta-button-comprar">
+          <BotaoLarge children="Comprar"/>
+        </div>
       </div>
 
     </div>

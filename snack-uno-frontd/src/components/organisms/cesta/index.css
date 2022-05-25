@@ -5,8 +5,48 @@
   justify-content: space-between;
   margin: 17px auto;
 }
+.cesta-breadcrumbs {
+  padding: 25px 45px 0;
+}
+.cesta-tipos-container {
+      margin: 0px 17px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
  .cesta-tipos span {
   font-weight: 600;
   font-size: 20px;
   padding: 0 10px;
+}
+.cesta-button-voltar {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.cesta-button-voltar a {
+  text-decoration: none;
+  color: #8C0400;
+  font-weight: 700;
+}
+.cesta-button-voltar-img {
+  height: 20px;
+  padding-right: 5px;
+}
+.cesta-botoes {
+  text-align: center;
+  padding-bottom: 25px
+}
+.cesta-total {
+  max-width: 1063px;
+  min-width: 730px;
+  display: flex;
+  margin: 17px auto;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-weight: 700;
+  font-size: 18px;
 }
