@@ -1,4 +1,4 @@
-
+import './index.css'
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import AppBar from '@mui/material/AppBar'
@@ -39,7 +39,7 @@ function Navegacao() {
           </IconButton>
           <img src={logo} className="logo" alt="logo" />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            SnackUno
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
