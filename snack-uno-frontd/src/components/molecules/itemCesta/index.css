@@ -62,11 +62,11 @@
 }
 @media only screen and (max-width: 1230px) {
   .item-cesta-container {
-    min-width: 891px;
+    min-width: 740px;
   }
   .item-imagens {
     display: flex;
-    width: 90px;
+    width: 140px;
   }
 }
 @media only screen and (max-width: 1010px) {

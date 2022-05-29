@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Cadastro from './components/organisms/cadastro/index'
+import EntregaPagamento from './components/organisms/entregaPagamento/index'
 import Login from './components/organisms/login/index'
 import {
   BrowserRouter,
@@ -21,6 +22,7 @@ root.render(
         <Route path="cadastro" element={<Cadastro />} />
         <Route path="login" element={<Login />} />
         <Route path="minha-cesta" element={<Cesta />} />
+        <Route path="minha-cesta/entrega" element={<EntregaPagamento />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

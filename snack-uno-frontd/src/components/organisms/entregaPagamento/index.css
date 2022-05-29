@@ -1,0 +1,50 @@
+.entrega-forms {
+  background: white;
+  width: 498px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.entrega-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.entrega-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.entrega-img {
+  height: 230px;
+}
+
+.entrega-input-span {
+  margin: 0 8px;
+}
+.entrega-reference {
+  margin-bottom: 8px;
+}
+.entrega-input-multiline {
+  margin: 8px;
+}
+
+.entrega-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.entrega-botoes {
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+.entrega-button-voltar {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.entrega-button-voltar-img {
+  height: 20px;
+  padding-right: 5px;
+}

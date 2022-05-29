@@ -1,0 +1,166 @@
+import * as React from 'react';
+import TituloLinha from '../../atoms/tituloLinha/index.js'
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import FormLabel from '@mui/material/FormLabel';
+import './index.css'
+import HambuguerLeft from '../../../assets/hamburguer-left.png'
+import HambuguerRight from '../../../assets/hamburguer-right.png'
+import Arrow from '../../../assets/arrow.png'
+import Breadcrumb from '../../atoms/breadcrumb/index.js'
+import BotaoLarge from '../../atoms/botaoLarge/index.js'
+import BotaoLink from '../../atoms/botaoLink/index.js'
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Select from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
+const currencies = [
+  {
+    value: 'USD',
+    label: 'Bloco R',
+  },
+  {
+    value: 'EUR',
+    label: 'Bloco R3',
+  },
+  {
+    value: 'BTC',
+    label: 'Bloco M',
+  },
+  {
+    value: 'JPY',
+    label: 'Bloco K',
+  },
+];
+
+
+export default function EntregaPagamento() {
+  let [breadcrumb] = React.useState([
+    {
+      color: 'inherit',
+      text: 'Inicial',
+      href: '/',
+      id: 1,
+    },
+    {
+      color: 'inherit',
+      text: 'Minha cesta',
+      href: '/minha-cesta',
+      id: 2,
+    },
+    {
+      color: 'text.primary',
+      text: 'Entrega',
+      href: '/minha-cesta/entrega',
+      id: 3,
+    }
+  ]);
+  const [currency, setCurrency] = React.useState('');
+  const [value, setValue] = React.useState('Controlled');
+
+  const handleChange = (event) => {
+    setCurrency(event.target.value);
+  };
+  const handleChangens = (event) => {
+    setValue(event.target.value);
+  };
+
+  return (
+    <div>
+      <div className="entrega-header">
+        <div className="entrega-breadcrumbs">
+          <Breadcrumb mock={breadcrumb} />
+        </div>
+        <div className=""><TituloLinha children={'Local de Entrega'} widths="70%" /></div>
+      </div>
+      <div className="entrega-body">
+        <div className="entrega-img-right">
+          <img src={HambuguerLeft} className="entrega-img" />
+        </div>
+        <div className="entrega-forms">
+          <Box
+            component="form"
+            sx={{
+              '& .MuiTextField-root': { m: 1, width: '45ch' },
+            }}
+            noValidate
+            autoComplete="off"
+          >
+            <FormControl sx={{ m: 1, width: 200 }}>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={currencies}
+                onChange={handleChange}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+            <div className="entrega-inputs">
+              <div className="entrega-input-span"><span >Bloco</span></div>
+              <TextField
+                id="outlined-select-currency"
+                select
+                onChange={handleChange}
+                helperText="Ex: Bloco R"
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+
+            <div className="entrega-inputs">
+              <div className="entrega-input-span"><span >Piso/andar</span></div>
+              <TextField
+                id="outlined-select-currency"
+                select
+
+                onChange={handleChange}
+                helperText="Ex: 1° andar"
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+
+
+            <div className="entrega-inputs">
+              <div className="entrega-input-span entrega-reference"><span >Referência</span></div>
+
+              <OutlinedInput multiline rows={4} placeholder="Ex: Sala 201, proximo ao banheiro feminin" />
+
+            </div>
+
+
+          </Box>
+        </div>
+        <div className="entrega-img-left">
+          <img src={HambuguerRight} className="entrega-img" />
+        </div>
+      </div>
+      <div className="entrega-bottom">
+        <div className="entrega-botoes">
+          <div className="entrega-button-voltar">
+            <img className="entrega-button-voltar-img" src={Arrow} />
+            <BotaoLink children="Voltar a tela inicial" to="/" />
+          </div>
+          <div className="entrega-button-comprar">
+            <BotaoLarge children="Comprar" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  );
+}
