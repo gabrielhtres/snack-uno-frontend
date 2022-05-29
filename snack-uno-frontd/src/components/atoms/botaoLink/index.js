@@ -1,3 +1,4 @@
+import './index.css'
 
 type Props = {
   children?: String,
