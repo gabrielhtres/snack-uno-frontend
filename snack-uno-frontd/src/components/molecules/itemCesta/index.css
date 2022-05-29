@@ -68,9 +68,6 @@
     display: flex;
     width: 90px;
   }
-  .cesta-tipos {
-    min-width: 948px;
-  }
 }
 @media only screen and (max-width: 1010px) {
   .item-cesta-container {
@@ -79,8 +76,5 @@
   .item-imagens {
     display: flex;
     width: 154px;
-  }
-  .cesta-tipos {
-    min-width: 597px;
   }
 }

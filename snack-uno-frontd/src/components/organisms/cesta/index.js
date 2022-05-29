@@ -63,6 +63,7 @@ function Cesta() {
             <span>Item</span>
             <span></span>
             <span></span>
+            <span></span>
             <span>Resumo</span>
             <span>Preço</span>
           </div>

@@ -15,7 +15,7 @@
   justify-content: space-between;
   margin: 17px auto;
 }
- .cesta-tipos span {
+.cesta-tipos span {
   font-weight: 600;
   font-size: 20px;
   padding: 0 10px;
@@ -48,4 +48,14 @@
 .cesta-button-voltar-img {
   height: 20px;
   padding-right: 5px;
+}
+@media only screen and (max-width: 1230px) {
+  .cesta-tipos {
+    min-width: 800px;
+  }
+}
+@media only screen and (max-width: 1010px) {
+  .cesta-tipos {
+    min-width: 597px;
+  }
 }
