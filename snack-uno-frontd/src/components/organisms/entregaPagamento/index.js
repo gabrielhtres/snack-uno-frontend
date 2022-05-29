@@ -75,36 +75,15 @@ export default function EntregaPagamento() {
       </div>
       <div className="entrega-body">
         <div className="entrega-img-right">
-          <img src={HambuguerLeft} className="entrega-img" />
+          <img src={HambuguerLeft} alt="ilustração" className="entrega-img" />
         </div>
         <div className="entrega-forms">
-          <Box
-            component="form"
-            sx={{
-              '& .MuiTextField-root': { m: 1, width: '45ch' },
-            }}
-            noValidate
-            autoComplete="off"
-          >
-            <FormControl sx={{ m: 1, width: 200 }}>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={currencies}
-                onChange={handleChange}
-              >
-                {currencies.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-
+          <FormControl sx={{ m: 2, width: 495 }}>
             <div className="entrega-inputs">
-              <div className="entrega-input-span"><span >Bloco</span></div>
+              <div className="entrega-input-span"><span>Bloco</span></div>
               <TextField
                 id="outlined-select-currency"
+                placeholder="Placeholder"
                 select
                 onChange={handleChange}
                 helperText="Ex: Bloco R"
@@ -116,13 +95,11 @@ export default function EntregaPagamento() {
                 ))}
               </TextField>
             </div>
-
             <div className="entrega-inputs">
-              <div className="entrega-input-span"><span >Piso/andar</span></div>
+              <div className="entrega-input-span"><span>Piso/andar</span></div>
               <TextField
                 id="outlined-select-currency"
                 select
-
                 onChange={handleChange}
                 helperText="Ex: 1° andar"
               >
@@ -133,20 +110,20 @@ export default function EntregaPagamento() {
                 ))}
               </TextField>
             </div>
-
-
             <div className="entrega-inputs">
-              <div className="entrega-input-span entrega-reference"><span >Referência</span></div>
-
-              <OutlinedInput multiline rows={4} placeholder="Ex: Sala 201, proximo ao banheiro feminin" />
-
+              <div className="entrega-input-span entrega-reference"><span>Referência</span></div>
+              <TextField
+                id="outlined-multiline-flexible"
+                multiline
+                maxRows={4}
+                placeholder="Ex: Bancos em frente ao elevador"
+                onChange={handleChangens}
+              />
             </div>
-
-
-          </Box>
+          </FormControl>
         </div>
         <div className="entrega-img-left">
-          <img src={HambuguerRight} className="entrega-img" />
+          <img src={HambuguerRight} alt="ilustração" className="entrega-img" />
         </div>
       </div>
       <div className="entrega-bottom">

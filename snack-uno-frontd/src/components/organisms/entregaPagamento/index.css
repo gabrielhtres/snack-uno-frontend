@@ -1,13 +1,14 @@
 .entrega-forms {
   background: white;
-  width: 498px;
-  padding: 20px 0;
+  width: auto;
   display: flex;
   justify-content: center;
+  border-radius: 13px;
 }
 .entrega-inputs {
   display: flex;
   flex-direction: column;
+  margin: 6px 25px;
 }
 .entrega-body {
   display: flex;
@@ -15,15 +16,9 @@
   align-items: center;
 }
 .entrega-img {
-  height: 230px;
+  height: 263px;
 }
 
-.entrega-input-span {
-  margin: 0 8px;
-}
-.entrega-reference {
-  margin-bottom: 8px;
-}
 .entrega-input-multiline {
   margin: 8px;
 }
@@ -47,4 +42,16 @@
 .entrega-button-voltar-img {
   height: 20px;
   padding-right: 5px;
+}
+
+@media only screen and (max-width: 1370px) {
+  .titulo-text {
+    font-size: 25px;
+  }
+  .entrega-inputs {
+    margin: 2px 45px;
+  }
+  .entrega-botoes {
+    padding-bottom: 13px;
+  }
 }

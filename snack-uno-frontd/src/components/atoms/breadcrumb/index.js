@@ -9,18 +9,20 @@ type Props = {
 };
 export default function Breadcrumb({ mock }: Props) {
   return (
-    <Stack spacing={2}>
-      <Breadcrumbs
-        separator={<NavigateNextIcon fontSize="small" />}
-        aria-label="breadcrumb"
-      >
-        {mock.map((mock, index) => (
-          <Link underline="hover" key={index} color={mock.color} href={mock.href} >
-            {mock.text}
-          </Link>
-        ))}
-      </Breadcrumbs>
-    </Stack>
+    <div style={{ padding: '25px 45px 0' }}>
+      <Stack spacing={2}>
+        <Breadcrumbs
+          separator={<NavigateNextIcon fontSize="small" />}
+          aria-label="breadcrumb"
+        >
+          {mock.map((mock, index) => (
+            <Link underline="hover" key={index} color={mock.color} href={mock.href} >
+              {mock.text}
+            </Link>
+          ))}
+        </Breadcrumbs>
+      </Stack>
+    </div >
   );
 }
 

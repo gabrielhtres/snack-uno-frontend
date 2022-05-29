@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Cadastro from './components/organisms/cadastro/index'
 import EntregaPagamento from './components/organisms/entregaPagamento/index'
 import Login from './components/organisms/login/index'
+
+import Navegacao from './components/molecules/navegacao/index.js'
 import {
   BrowserRouter,
   Routes,
@@ -17,6 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Navegacao />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="cadastro" element={<Cadastro />} />
