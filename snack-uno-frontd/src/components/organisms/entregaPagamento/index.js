@@ -1,9 +1,7 @@
 import * as React from 'react';
 import TituloLinha from '../../atoms/tituloLinha/index.js'
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-import FormLabel from '@mui/material/FormLabel';
 import './index.css'
 import HambuguerLeft from '../../../assets/hamburguer-left.png'
 import HambuguerRight from '../../../assets/hamburguer-right.png'
@@ -11,8 +9,6 @@ import Arrow from '../../../assets/arrow.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
-import OutlinedInput from '@mui/material/OutlinedInput';
-import Select from '@mui/material/Select';
 import FormControl from '@mui/material/FormControl';
 const currencies = [
   {

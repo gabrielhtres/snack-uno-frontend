@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './App.css';
-import Navegacao from './components/molecules/navegacao/index.js'
 import Cards from './components/molecules/cards/index.js'
 import CardExpand from './components/molecules/cardExpand/index.js'
 import Inicial from './components/organisms/inicial/index.js'
@@ -46,7 +45,6 @@ function App() {
   return (
 
     <div className="App">
-      <Navegacao />
       <Inicial />
       <div className="lista-de-item">
       {mock.map((mock, index) => (
