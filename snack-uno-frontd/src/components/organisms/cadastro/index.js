@@ -10,53 +10,80 @@ function Cadastro() {
     <div>
       <div className="Cadastro">
 
-      <div className="cadastro-container">
-      <div className="cadastro-text-linha">
-            <div className="cadastro-linha"></div>
-            <h1 className="cadastro-text">Cadastro</h1>
-            <div className="cadastro-linha"></div>
+        <div className='cadastro-lateral'>
+          <div className="cadastro-container">
+
+
+            <div className="cadastro-text-linha">
+              <div className="cadastro-linha"></div>
+              <h1 className="cadastro-text">Cadastro</h1>
+              <div className="cadastro-linha"></div>
+            </div>
+            <div className='cadastro-lateral-imagem'>
+              <img alt="logo-hamburguer" src={Hamburguer} className="imagem-lado" />
+            </div>
+
           </div>
-      <img alt="logo-hamburguer" src={Hamburguer} className="imagem-lado" />
-      </div>
-      
-      <div className="cadastro-inputs-group">
+        </div>
+        <div className='cadastro-body'>
+          <div className="cadastro-inputs-group">
             <div className="cadastro-inputs">
-              <a>Nome Completo</a>
-              <p2 className="obrigatorio">*obrigatório</p2>
-              <TextField id="outlined-basic" label="Informe seu nome" variant="outlined" />
+              <div className="cadastro-inputs-text">
+                <span>Nome Completo</span>
+                <p2 className="cadastro-obrigatorio">*</p2>
+              </div>
+
+              <TextField id="outlined-basic" placeholder="Informe seu nome" variant="outlined" />
             </div>
             <div className="cadastro-inputs">
-              <a>CPF</a>
-              <p2 className="obrigatorio">*obrigatório</p2>
-              <TextField id="outlined-basic" label="Apenas Numeros" variant="outlined" />
+              <div className="cadastro-inputs-text">
+                <span>CPF</span>
+                <p2 className="cadastro-obrigatorio">*</p2>
+              </div>
+
+              <TextField id="outlined-basic" placeholder="Apenas Numeros" variant="outlined" />
             </div>
             <div className="cadastro-inputs">
-              <a>Data de Nascimento</a>
-              <p2 className="obrigatorio">*obrigatório</p2>
-              <TextField id="outlined-basic" label="DD/MM/AAAA" variant="outlined" />
+              <div className="cadastro-inputs-text">
+                <span>Data de Nascimento</span>
+                <p2 className="cadastro-obrigatorio">*</p2>
+              </div>
+
+              <TextField id="outlined-basic" placeholder="DD/MM/AAAA" variant="outlined" />
             </div>
             <div className="cadastro-inputs">
-              <a>Telefone</a>
-              <p2 className="obrigatorio">*obrigatório</p2>
-              <TextField id="outlined-basic" label="(DD) 000000000" variant="outlined" />
+              <div className="cadastro-inputs-text">
+                <span>Telefone</span>
+                <p2 className="cadastro-obrigatorio">*</p2>
+              </div>
+
+              <TextField id="outlined-basic" placeholder="(DD) 000000000" variant="outlined" />
             </div>
             <div className="cadastro-inputs">
-              <h2>Guarde as informações abaixo, você vai utilizar para logar aqui posteriormente</h2>
-              <a>Email</a>
-              <TextField id="outlined-basic" label="user@email.com" variant="outlined" />
+              <div className="cadastro-inputs-text">
+                <h2>Guarde as informações abaixo, você vai utilizar para logar aqui posteriormente</h2>
+                <span>Email</span>
+              </div>
+
+              <TextField id="outlined-basic" placeholder="user@email.com" variant="outlined" />
               <p1 className="text-complemento">Nunca compartilharemos seu e-mail com mais ninguem.</p1>
             </div>
             <div className="cadastro-inputs">
-              <a>Senha</a>
+              <span>Senha</span>
               <TextField id="outlined-basic" variant="outlined" />
               <p1 className="text-complemento">Crie sua nova senha</p1>
             </div>
             <div className="cadastro-concluir">
-              <BotaoLarge children="Concluir"/>
+              <BotaoLarge children="Concluir" />
             </div>
           </div>
+        </div>
 
-    </div>
+
+
+
+
+      </div>
     </div>
   );
 }
