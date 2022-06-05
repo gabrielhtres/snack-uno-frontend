@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Navegacao from '../../molecules/navegacao/index.js'
 import TextField from '@mui/material/TextField';
 import Hamburguer from '../../../assets/hamburguer-v.png'
 import './index.css'
@@ -9,7 +8,6 @@ function Cadastro() {
 
   return (
     <div>
-      <Navegacao />
       <div className="Cadastro">
 
       <div className="cadastro-container">

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Navegacao from '../../molecules/navegacao/index.js'
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import InputLabel from '@mui/material/InputLabel';
@@ -36,7 +35,6 @@ function Login() {
 
   return (
     <div>
-      <Navegacao />
       <div className="Login">
 
         <div className="login-imagems">
