@@ -54,7 +54,10 @@
   }
 }
 .formss {
-  width: 20px;
+  width: 30rem;
+}
+.entrega-inputs-body {
+  padding: 10px 0;
 }
 @media only screen and (max-width: 1370px) {
   .entrega-img {
@@ -62,12 +65,9 @@
   }
   .entrega-body {
     margin: 10px 0;
-}
+  }
 
-.entrega-inputs-body {
-padding: 10px 0;
-}
-.formss {
-  width: 25rem;
-}
+  .formss {
+    width: 25rem;
+  }
 }
