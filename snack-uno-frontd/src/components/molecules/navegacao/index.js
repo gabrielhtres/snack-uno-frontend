@@ -37,7 +37,7 @@ function Navegacao() {
   };
   return (
     <div className="Navegacao">
-      <AppBar theme={theme} position="static">
+      <AppBar theme={theme} position="static" elevation={0}>
         <Toolbar color="secondary">
           <IconButton
             size="large"

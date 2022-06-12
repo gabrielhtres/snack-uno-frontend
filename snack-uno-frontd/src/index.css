@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.ajuda-float {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}

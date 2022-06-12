@@ -14,6 +14,8 @@ import {
   Route,
 } from "react-router-dom";
 import Cesta from './components/organisms/cesta/index.js'
+import Fab from '@mui/material/Fab';
+import HelpIcon from '@mui/icons-material/Help';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +29,12 @@ root.render(
         <Route path="minha-cesta" element={<Cesta />} />
         <Route path="minha-cesta/entrega" element={<EntregaPagamento />} />
       </Routes>
+      <div className="ajuda-float">
+        <Fab color="primary" variant="extended" size="medium">
+          <HelpIcon sx={{ mr: 1 }} />
+          Ajuda
+        </Fab>
+      </div>
     </BrowserRouter>
   </React.StrictMode>
 );
