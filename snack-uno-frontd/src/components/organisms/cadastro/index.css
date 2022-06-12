@@ -1,87 +1,66 @@
-.cadastro-container {
-    position: absolute;
+.Cadastro {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    height: 100vh;
+}
+.cadastro-container {
+    height: 100%;
     width: 450px;
     background-image: linear-gradient(#8C0400, #FF7A00);
 }
-
-.cadastro-text-linha {
-    position: relative;
-    margin-bottom: 400px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+.cadastro-lateral-imagem {
+    text-align: center;
 }
-
-.cadastro-text {
-    position: relative;
-    color: white;
-    font-family: cursive;
-    font-style: normal;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cadastro-linha {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    border: 3px solid;
-    width: 100px;
-}
-
-.imagem-lado{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.imagem-lado {
     height: 300px;
 }
-
 .cadastro-inputs-group {
-    position: absolute;
     background-color: white;
     border-radius: 10px;
-    height: 90vh;
-    width: 1200px;
-    margin-top: 5rem;
-    left: 580px;
+    margin: 5rem;
+    padding: 45px 0;
 }
-
 .cadastro-inputs {
-    margin: 7px;
-    margin-left: 10px;
-    width: 800px;
+    padding: 6px 100px;
     display: flex;
     flex-direction: column;
     justify-content: left;
 }
-
-.obrigatorio {
-    position: absolute;
+.cadastro-obrigatorio {
     color: red;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    margin-left: 500px;
 }
-
-.text-complemento{
+.text-complemento {
     position: relative;
     color: #6f66d9;
     font-size: small;
     margin-left: 5px;
 }
-
-.cadastro-concluir{
-    position: relative;
-    justify-content: center;
+.cadastro-concluir {
+    text-align: center;
+}
+.cadastro-text-linha {
+    display: flex;
+    color: white;
     align-items: center;
+    justify-content: space-between;
+}
+.cadastro-text {
+    font-family: cursive;
+    font-style: normal;
+}
+.cadastro-linha {
+    border: 3px solid;
+    width: 115px;
+}
+@media only screen and (max-width: 1370px) {
+    .imagem-lado {
+        height: 167px;
+    }
+    .cadastro-container {
+        width: 315px;
+    }
+    .cadastro-linha {
+        width: 50px;
+    }
+    .cadastro-inputs-group {
+        margin: 3rem;
+    }
 }

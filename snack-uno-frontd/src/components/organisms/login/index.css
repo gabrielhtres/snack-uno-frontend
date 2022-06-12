@@ -13,43 +13,75 @@
   height: 277px;
   position: relative; */
 }
+
 .login-imagem {
   width: 250px;
 }
+
 .login-container {
   padding: 20px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 1px 1px 10px 1px #88888824;
 }
+
 .login-text-linha {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
+
 .login-text {
   font-family: cursive;
   font-style: normal;
 }
+
 .login-linha {
   border: 3px solid;
   width: 115px;
 }
+
 .login-inputs-group {
   display: flex;
   padding: 0 60px;
   flex-direction: column;
   align-items: stretch;
 }
+
 .login-inputs {
   margin: 7px;
   display: flex;
   flex-direction: column;
 }
+
 .login-cadastro {
   margin: 7px;
   display: flex;
   flex-direction: column;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 1370px) {
+  .login-inputs-group {
+    padding: 0 62px;
+  }
+
+  .login-container {
+    padding: 6px;
+  }
+
+  .login-imagem {
+    width: 172px;
+  }
+
+  .login-imagems {
+    top: 17px;
+    height: 138px;
+    position: relative;
+  }
+
+  .Login {
+    padding-bottom: 45px;
+  }
 }
