@@ -74,47 +74,51 @@ export default function EntregaPagamento() {
           <img src={HambuguerLeft} alt="ilustração" className="entrega-img" />
         </div>
         <div className="entrega-forms">
-          <FormControl sx={{ m: 2, width: 495 }}>
-            <div className="entrega-inputs">
-              <div className="entrega-input-span"><span>Bloco</span></div>
-              <TextField
-                id="outlined-select-currency"
-                placeholder="Placeholder"
-                select
-                onChange={handleChange}
-                helperText="Ex: Bloco R"
-              >
-                {currencies.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div className="entrega-inputs">
-              <div className="entrega-input-span"><span>Piso/andar</span></div>
-              <TextField
-                id="outlined-select-currency"
-                select
-                onChange={handleChange}
-                helperText="Ex: 1° andar"
-              >
-                {currencies.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
-            </div>
-            <div className="entrega-inputs">
-              <div className="entrega-input-span entrega-reference"><span>Referência</span></div>
-              <TextField
-                id="outlined-multiline-flexible"
-                multiline
-                maxRows={4}
-                placeholder="Ex: Bancos em frente ao elevador"
-                onChange={handleChangens}
-              />
+          <FormControl className='formss'>
+            <div className='entrega-inputs-body'>
+
+
+              <div className="entrega-inputs">
+                <div className="entrega-input-span"><span>Bloco</span></div>
+                <TextField
+                  id="outlined-select-currency"
+                  placeholder="Placeholder"
+                  select
+                  onChange={handleChange}
+                  helperText="Ex: Bloco R"
+                >
+                  {currencies.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div className="entrega-inputs">
+                <div className="entrega-input-span"><span>Piso/andar</span></div>
+                <TextField
+                  id="outlined-select-currency"
+                  select
+                  onChange={handleChange}
+                  helperText="Ex: 1° andar"
+                >
+                  {currencies.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div>
+              <div className="entrega-inputs">
+                <div className="entrega-input-span entrega-reference"><span>Referência</span></div>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  multiline
+                  maxRows={4}
+                  placeholder="Ex: Bancos em frente ao elevador"
+                  onChange={handleChangens}
+                />
+              </div>
             </div>
           </FormControl>
         </div>
