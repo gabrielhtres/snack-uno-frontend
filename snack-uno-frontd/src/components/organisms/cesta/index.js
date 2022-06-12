@@ -84,7 +84,7 @@ function Cesta() {
             <BotaoLink children="Voltar a tela inicial" to="/" />
           </div>
           <div className="cesta-button-comprar">
-            <BotaoLarge children="Comprar" />
+            <BotaoLarge children="Comprar" to="minha-cesta/entrega"/>
           </div>
         </div>
       </div>

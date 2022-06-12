@@ -1,8 +1,6 @@
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
-
-
 const BootstrapButton = styled(Button)({
   backgroundColor: 'green',
   boxShadow: 'none',
@@ -33,11 +31,12 @@ const BootstrapButton = styled(Button)({
 });
 type Props = {
   children?: String,
+  to?: String,
 };
-function BotaoLarge({ children }: Props) {
+function BotaoLarge({ children, to }: Props) {
 
   return (
-    <BootstrapButton size="large" variant="contained">
+    <BootstrapButton href={to} size="large" variant="contained">
       {children}
     </BootstrapButton>
   );

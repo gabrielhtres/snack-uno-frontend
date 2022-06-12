@@ -35,14 +35,15 @@ function Login() {
   };
 
   return (
-    <div>
-      <Navegacao />
-      <div className="Login">
 
-        <div className="login-imagems">
-          <img alt="logo-hamburguer" src={Hamburguer} className="login-imagem" />
-        </div>
+    <div className="Login">
+      <div className="login-body">
+
+
         <div className="login-container">
+          <div className="login-imagems">
+            <img alt="logo-hamburguer" src={Hamburguer} className="login-imagem" />
+          </div>
           <div className="login-text-linha">
             <div className="login-linha"></div>
             <h1 className="login-text">Login</h1>
@@ -77,7 +78,7 @@ function Login() {
               </FormControl>
             </div>
             <div className="login-inputs">
-              <BotaoLarge children="Entrar"/>
+              <BotaoLarge children="Entrar" />
             </div>
             <div className="login-cadastro">
               ou
@@ -87,6 +88,7 @@ function Login() {
         </div>
       </div>
     </div>
+
   );
 }
 

@@ -4,16 +4,20 @@
   flex-direction: column;
   align-items: center;
 }
+.login-body {
+  margin-bottom: 55px;
+}
 .login-imagems {
+  /**
   top: 17px;
   height: 277px;
-  position: relative;
+  position: relative; */
 }
 .login-imagem {
-  width: 326px;
+  width: 250px;
 }
 .login-container {
-  padding: 33px;
+  padding: 20px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 1px 1px 10px 1px #88888824;
@@ -34,7 +38,7 @@
 }
 .login-inputs-group {
   display: flex;
-  padding: 0 154px;
+  padding: 0 60px;
   flex-direction: column;
   align-items: stretch;
 }
