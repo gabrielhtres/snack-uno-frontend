@@ -5,11 +5,16 @@ import MenuItem from '@mui/material/MenuItem';
 import './index.css'
 import HambuguerLeft from '../../../assets/hamburguer-left.png'
 import HambuguerRight from '../../../assets/hamburguer-right.png'
+import QR from '../../../assets/QR.png'
 import Arrow from '../../../assets/arrow.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
 import FormControl from '@mui/material/FormControl';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 const currencies = [
   {
     value: 'USD',
@@ -28,6 +33,17 @@ const currencies = [
     label: 'Bloco K',
   },
 ];
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  width: '47rem',
+  height: '40rem',
+  borderRadius: '10px'
+};
 
 
 export default function EntregaPagamento() {
@@ -60,6 +76,11 @@ export default function EntregaPagamento() {
   const handleChangens = (event) => {
     setValue(event.target.value);
   };
+  // modal
+  const [open, setOpen] = React.useState(false);
+  const [Disabled, setDisabled] = React.useState(true);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div>
@@ -132,10 +153,30 @@ export default function EntregaPagamento() {
             <img className="entrega-button-voltar-img" src={Arrow} />
             <BotaoLink children="Voltar a tela inicial" to="/" />
           </div>
-          <div className="entrega-button-comprar">
+          <div className="entrega-button-comprar" onClick={handleOpen}>
             <BotaoLarge children="Comprar" />
           </div>
         </div>
+      </div>
+      <div className="entrega-modal">
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <TituloLinha children={'Pagamento'} size="25px" widths="60%" />
+            <div className="entrega-modal-body">
+              <span>PIX</span>
+
+              <span>Leia o QR CODE para efetuar o pagamento</span>
+              <div className="entrega-modal-qrcode"><img src={QR} /></div>
+              <span>Total: R$ 10,00</span>
+              <BotaoLarge children="Finalizar" disabled={Disabled}/>
+            </div>
+          </Box>
+        </Modal>
       </div>
     </div>
 

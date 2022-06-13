@@ -28,15 +28,19 @@ const BootstrapButton = styled(Button)({
     boxShadow: 'none',
     backgroundColor: '#376737',
   },
+  '&:disabled': {
+    backgroundColor: '#9BAB9D',
+  }
 });
 type Props = {
   children?: String,
   to?: String,
+  disabled?: Boolean
 };
-function BotaoLarge({ children, to }: Props) {
+function BotaoLarge({ children, to, disabled }: Props) {
 
   return (
-    <BootstrapButton href={to} size="large" variant="contained">
+    <BootstrapButton href={to} size="large" variant="contained" disabled={disabled}>
       {children}
     </BootstrapButton>
   );
