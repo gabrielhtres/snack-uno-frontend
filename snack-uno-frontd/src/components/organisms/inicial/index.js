@@ -307,6 +307,8 @@ function Inicial() {
           <TituloLinha children={mock.nome} dir="none" widths={'80%'} />
           <div className="lista-de-item">
             <Carousel
+            className="carouselScrool"
+              itemWidth={250}
               plugins={[
                 {
                   resolve: slidesToShowPlugin,
