@@ -64,8 +64,11 @@
   flex-direction: column;
   align-items: center;
 }
-.entrega-modal-qrcode {
+.entrega-modal-img {
   height: 20rem;
+}
+.entrega-modal-loading {
+  height: 300px;
 }
 @media only screen and (max-width: 1370px) {
   .entrega-img {

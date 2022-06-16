@@ -6,6 +6,7 @@ import './index.css'
 import HambuguerLeft from '../../../assets/hamburguer-left.png'
 import HambuguerRight from '../../../assets/hamburguer-right.png'
 import QR from '../../../assets/QR.png'
+import hambload from '../../../assets/hambload.gif'
 import Arrow from '../../../assets/arrow.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
@@ -78,107 +79,117 @@ export default function EntregaPagamento() {
   };
   // modal
   const [open, setOpen] = React.useState(false);
+  const [LoadQrcode, setQRCODE] = React.useState(false);
   const [Disabled, setDisabled] = React.useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  return (
-    <div>
-      <div className="entrega-header">
-        <div className="entrega-breadcrumbs">
-          <Breadcrumb mock={breadcrumb} />
-        </div>
-        <div className=""><TituloLinha children={'Local de Entrega'} widths="70%" /></div>
-      </div>
-      <div className="entrega-body">
-        <div className="entrega-img-right">
-          <img src={HambuguerLeft} alt="ilustração" className="entrega-img" />
-        </div>
-        <div className="entrega-forms">
-          <FormControl className='formss'>
-            <div className='entrega-inputs-body'>
 
 
-              <div className="entrega-inputs">
-                <div className="entrega-input-span"><span>Bloco</span></div>
-                <TextField
-                  id="outlined-select-currency"
-                  placeholder="Placeholder"
-                  select
-                  onChange={handleChange}
-                  helperText="Ex: Bloco R"
-                >
-                  {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
-              <div className="entrega-inputs">
-                <div className="entrega-input-span"><span>Piso/andar</span></div>
-                <TextField
-                  id="outlined-select-currency"
-                  select
-                  onChange={handleChange}
-                  helperText="Ex: 1° andar"
-                >
-                  {currencies.map((option) => (
-                    <MenuItem key={option.value} value={option.value}>
-                      {option.label}
-                    </MenuItem>
-                  ))}
-                </TextField>
-              </div>
-              <div className="entrega-inputs">
-                <div className="entrega-input-span entrega-reference"><span>Referência</span></div>
-                <TextField
-                  id="outlined-multiline-flexible"
-                  multiline
-                  maxRows={4}
-                  placeholder="Ex: Bancos em frente ao elevador"
-                  onChange={handleChangens}
-                />
-              </div>
-            </div>
-          </FormControl>
-        </div>
-        <div className="entrega-img-left">
-          <img src={HambuguerRight} alt="ilustração" className="entrega-img" />
-        </div>
-      </div>
-      <div className="entrega-bottom">
-        <div className="entrega-botoes">
-          <div className="entrega-button-voltar">
-            <img className="entrega-button-voltar-img" src={Arrow} />
-            <BotaoLink children="Voltar a tela inicial" to="/" />
+
+
+
+    return (
+      <div>
+        <div className="entrega-header">
+          <div className="entrega-breadcrumbs">
+            <Breadcrumb mock={breadcrumb} />
           </div>
-          <div className="entrega-button-comprar" onClick={handleOpen}>
-            <BotaoLarge children="Comprar" />
+          <div className=""><TituloLinha children={'Local de Entrega'} widths="70%" /></div>
+        </div>
+        <div className="entrega-body">
+          <div className="entrega-img-right">
+            <img src={HambuguerLeft} alt="ilustração" className="entrega-img" />
+          </div>
+          <div className="entrega-forms">
+            <FormControl className='formss'>
+              <div className='entrega-inputs-body'>
+
+
+                <div className="entrega-inputs">
+                  <div className="entrega-input-span"><span>Bloco</span></div>
+                  <TextField
+                    id="outlined-select-currency"
+                    placeholder="Placeholder"
+                    select
+                    onChange={handleChange}
+                    helperText="Ex: Bloco R"
+                  >
+                    {currencies.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <div className="entrega-inputs">
+                  <div className="entrega-input-span"><span>Piso/andar</span></div>
+                  <TextField
+                    id="outlined-select-currency"
+                    select
+                    onChange={handleChange}
+                    helperText="Ex: 1° andar"
+                  >
+                    {currencies.map((option) => (
+                      <MenuItem key={option.value} value={option.value}>
+                        {option.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </div>
+                <div className="entrega-inputs">
+                  <div className="entrega-input-span entrega-reference"><span>Referência</span></div>
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    multiline
+                    maxRows={4}
+                    placeholder="Ex: Bancos em frente ao elevador"
+                    onChange={handleChangens}
+                  />
+                </div>
+              </div>
+            </FormControl>
+          </div>
+          <div className="entrega-img-left">
+            <img src={HambuguerRight} alt="ilustração" className="entrega-img" />
           </div>
         </div>
-      </div>
-      <div className="entrega-modal">
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <TituloLinha children={'Pagamento'} size="25px" widths="60%" />
-            <div className="entrega-modal-body">
-              <span>PIX</span>
-
-              <span>Leia o QR CODE para efetuar o pagamento</span>
-              <div className="entrega-modal-qrcode"><img src={QR} /></div>
-              <span>Total: R$ 10,00</span>
-              <BotaoLarge children="Finalizar" disabled={Disabled}/>
+        <div className="entrega-bottom">
+          <div className="entrega-botoes">
+            <div className="entrega-button-voltar">
+              <img className="entrega-button-voltar-img" src={Arrow} />
+              <BotaoLink children="Voltar a tela inicial" to="/" />
             </div>
-          </Box>
-        </Modal>
-      </div>
-    </div>
+            <div className="entrega-button-comprar" onClick={handleOpen}>
+              <BotaoLarge children="Comprar" />
+            </div>
+          </div>
+        </div>
+        <div className="entrega-modal">
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <TituloLinha children={'Pagamento'} size="25px" widths="60%" />
+              <div className="entrega-modal-body">
+                <span>PIX</span>
 
-  );
+                <span>Leia o QR CODE para efetuar o pagamento</span>
+                <div className="entrega-modal-img">
+                  {LoadQrcode
+                    ? <img className="entrega-modal-qrcode" src={QR} />
+                    : <img className="entrega-modal-loading" src={hambload} />}
+                </div>
+                <span>Total: R$ 10,00</span>
+                <BotaoLarge children="Finalizar" disabled={Disabled} />
+              </div>
+            </Box>
+          </Modal>
+        </div>
+      </div>
+
+    );
 }
