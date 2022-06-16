@@ -2,6 +2,14 @@ import * as React from 'react';
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import Cards from '../../molecules/cards/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js';
+import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import Next from '../../../assets/next.png'
+import NextL from '../../../assets/nextL.png'
+import NextDisable from '../../../assets/nextdisable.png'
+import NextLDisable from '../../../assets/nextLdisabled.png'
 import './index.css'
 function Inicial() {
   let [breadcrumb] = React.useState([
@@ -93,6 +101,54 @@ function Inicial() {
           sabores: ['calabreza', 'queijo', 'frango'],
           imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
           id: 5,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 6,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 7,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 8,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 9,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 10,
+        },
+        {
+          nome: 'Mini Pizza',
+          preco: '10,00',
+          quantidade: 4,
+          sabores: ['calabreza', 'queijo', 'frango'],
+          imagem: 'https://receitinhas.com.br/wp-content/uploads/2017/03/Depositphotos_42001073_m-2015-1-848x477.jpg',
+          id: 11
         },
       ],
       id: 100,
@@ -250,9 +306,32 @@ function Inicial() {
         <div className='inicial-restaurantes'>
           <TituloLinha children={mock.nome} dir="none" widths={'80%'} />
           <div className="lista-de-item">
+            <Carousel
+              plugins={[
+                {
+                  resolve: slidesToShowPlugin,
+                  options: {
+                    numberOfSlides: 5
+                  }
+                },
+                {
+                  resolve: arrowsPlugin,
+                  options: {
+                    numberOfSlides: 5,
+                    arrowLeft: <img src={NextL} style={{height: 30, margin:5}}/>,
+                    arrowLeftDisabled: <img src={NextLDisable} style={{ height: 30, margin: 5 }} />,
+                    arrowRight: <img src={Next} style={{ height: 30, margin: 5 }}/>,
+                    arrowRightDisabled: <img src={NextDisable} style={{ height: 30, margin: 5 }} />,
+                    addArrowClickHandler: true,
+                  }
+                },
+              ]}
+              >
             {mock.lanches.map((lanches, index) => (
+
               <Cards mock={lanches} key={index}/>
             ))}
+            </Carousel>
           </div>
         </div>
         ))}
