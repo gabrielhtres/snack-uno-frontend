@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import './index.css'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -24,39 +25,39 @@ type Props = {
   mock?: Array,
 };
 function Cards({ mock }: Props) {
+  
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
   return (
-    <div>
-        <Card sx={{ maxWidth: 340 }}>
+    <div className='Cards'>
+        <Card className='cards-content' >
           <CardMedia
             component="img"
-            height="290"
+            height="250"
             image={mock.imagem}
             alt="Paella dish"
+            className='cards-imagem'
           />
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {mock.nome} /uni
-            </Typography>
-          </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
+        
+          <CardActions disableSpacing className='cards-body'>
+            <div className='cards-text'>
+              <span className='cards-titulo'>{mock.nome}</span>
+              <span className='cards-preco'>R${mock.preco}</span>
+            </div>
+          
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon sx={{ color: 'white' }}/>
             </ExpandMore>
           </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <Collapse in={expanded} timeout="auto" unmountOnExit className='cards-expanded'>
             <CardContent>
               <Typography paragraph>
                 Heat 1/2 cup of the broth in a pot until simmering, add saffron and set

@@ -6,6 +6,7 @@
 }
 .lista-de-item {
   display: flex;
+  margin: 5px;
 }
 .App-logo {
   height: 40vmin;

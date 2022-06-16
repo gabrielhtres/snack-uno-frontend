@@ -1,7 +1,5 @@
 import * as React from 'react';
 import './App.css';
-import Cards from './components/molecules/cards/index.js'
-import CardExpand from './components/molecules/cardExpand/index.js'
 import Inicial from './components/organisms/inicial/index.js'
 function App() {
   let [mock] = React.useState([
@@ -43,20 +41,8 @@ function App() {
 
   ]);
   return (
-
     <div className="App">
       <Inicial />
-      <div className="lista-de-item">
-      {mock.map((mock, index) => (
-        <Cards mock={mock}/>
-      ))}
-      </div>
-
-        <div className="lista-de-item">
-        {mock.map((mock, index) => (
-                <CardExpand mock={mock}/>
-              ))}
-        </div>
     </div>
   );
 }
