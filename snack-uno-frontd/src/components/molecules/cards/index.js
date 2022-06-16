@@ -25,7 +25,8 @@ type Props = {
   mock?: Array,
 };
 function Cards({ mock }: Props) {
-  
+  console.log(mock)
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -41,13 +42,13 @@ function Cards({ mock }: Props) {
             alt="Paella dish"
             className='cards-imagem'
           />
-        
+
           <CardActions disableSpacing className='cards-body'>
             <div className='cards-text'>
               <span className='cards-titulo'>{mock.nome}</span>
               <span className='cards-preco'>R${mock.preco}</span>
             </div>
-          
+
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}

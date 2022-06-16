@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .ajuda-float {
-  position: absolute;
+  position: fixed;
   bottom: 16px;
   right: 16px;
 }

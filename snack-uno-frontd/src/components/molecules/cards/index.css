@@ -7,9 +7,6 @@
 .cards-body {
     background-color:#8C0400;
 }
-.cards-imagem {
-    width: 90px;
-}
 .cards-text {
     display: flex;
     flex-direction: column;
