@@ -1,9 +1,7 @@
 .App {
   text-align: center;
 }
-.logo {
-  height: 55px;
-}
+
 .lista-de-item {
   display: flex;
   margin: 5px;
