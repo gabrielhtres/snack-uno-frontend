@@ -1,8 +1,16 @@
 import { CLICK_UPDATE_VALUE, NOTIFICATION_VALUE, MINHA_CESTA_VALUE } from './actionsTypes.js';
 
+
 export const clickButton = value => ({
   type: CLICK_UPDATE_VALUE,
   newValue: value
+});
+
+
+
+export const clickConnect = value => ({
+  type: CLICK_UPDATE_VALUE,
+  userConnect: value
 });
 
 export const clickNotification = value => ({
