@@ -11,7 +11,11 @@ import NextL from '../../../assets/nextL.png'
 import NextDisable from '../../../assets/nextdisable.png'
 import NextLDisable from '../../../assets/nextLdisabled.png'
 import './index.css'
-function Inicial() {
+type Props = {
+  Restaurantes?: Array,
+  Produtos?: Array,
+};
+function Inicial({ Restaurantes, Produtos }: Props) {
   let [breadcrumb] = React.useState([
     {
       color: 'text.primary',
@@ -279,7 +283,7 @@ function Inicial() {
           preco: '10,00',
           quantidade: 4,
           sabores: ['calabreza', 'queijo', 'frango'],
-          imagem: 'https://i.pinimg.com/564x/18/24/36/182436db4d40a75e96df83ce8f924b93.jpg',
+          imagem: 'https://receitassemsegredos.com.br/wp-content/uploads/2022/03/2.webp',
           id: 5,
         },
         {
@@ -441,51 +445,69 @@ function Inicial() {
     },
   ]);
 
-  console.log(restaurantes)
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000)
+  });
+
   return (
     <div className="Inicial">
+      <div></div>
       <div className='inicial-header'>
         <div className='inicial-titule'>
           <TituloLinha children='Restaurantes' size={'2em'} esq="none" widths={'66%'} />
         </div>
       </div>
-      <div className='inicial-body'>
-      {restaurantes.map((mock, index) => (
-        <div className='inicial-restaurantes'>
-          <TituloLinha children={mock.nome} dir="none" widths={'74%'} />
-          <div className="lista-de-item">
-            <Carousel
-            className="carouselScrool"
-              itemWidth={250}
-              plugins={[
-                {
-                  resolve: slidesToShowPlugin,
-                  options: {
-                    numberOfSlides: 5
-                  }
-                },
-                {
-                  resolve: arrowsPlugin,
-                  options: {
-                    numberOfSlides: 5,
-                    arrowLeft: <img src={NextL} style={{height: 30, margin:5}}/>,
-                    arrowLeftDisabled: <img src={NextLDisable} style={{ height: 30, margin: 5 }} />,
-                    arrowRight: <img src={Next} style={{ height: 30, margin: 5 }}/>,
-                    arrowRightDisabled: <img src={NextDisable} style={{ height: 30, margin: 5 }} />,
-                    addArrowClickHandler: true,
-                  }
-                },
-              ]}
-              >
-            {mock.lanches.map((lanches, index) => (
+      {loading
+        ? <div>carregandooooooooooooooooo</div>
 
-              <Cards mock={lanches} key={index}/>
-            ))}
-            </Carousel>
-          </div>
+        :
+        <div className='inicial-body'>
+          {Restaurantes.map((restaurante, index) => (
+            <div className='inicial-restaurantes'>
+              <TituloLinha children={restaurante.name} dir="none" widths={'74%'} />
+             
+
+              <div className="lista-de-item">
+                <Carousel
+                  className="carouselScrool"
+                  itemWidth={250}
+                  plugins={[
+                    {
+                      resolve: slidesToShowPlugin,
+                      options: {
+                        numberOfSlides: 5
+                      }
+                    },
+                    {
+                      resolve: arrowsPlugin,
+                      options: {
+                        numberOfSlides: 5,
+                        arrowLeft: <img src={NextL} style={{ height: 30, margin: 5 }} />,
+                        arrowLeftDisabled: <img src={NextLDisable} style={{ height: 30, margin: 5 }} />,
+                        arrowRight: <img src={Next} style={{ height: 30, margin: 5 }} />,
+                        arrowRightDisabled: <img src={NextDisable} style={{ height: 30, margin: 5 }} />,
+                        addArrowClickHandler: true,
+                      }
+                    },
+                  ]}
+                >
+                  {Produtos.map((lanches, ix) => (
+                    lanches.id_restaurant === restaurante.id_restaurant ?
+                    <div>
+                    <Cards mock={lanches} key={ix} />
+                    </div>
+                    : ''
+                  ))}
+                </Carousel>
+              </div>
+            </div>
+          ))}
         </div>
-        ))}
-      </div>
+      }
     </div>
   );
 }

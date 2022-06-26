@@ -1,11 +1,69 @@
 import * as React from 'react';
 import './index.css'
 import Arrow from '../../../assets/arrow.png'
+import HamburguerDisabled from '../../../assets/hamburguer-disabled.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
 import ItemCesta from '../../molecules/itemCesta/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js'
+
+export function CestaCheia (itens) {
+  return (
+    <div className='Cesta-Cheia'>
+      <div className="cesta-body">
+        <div className="cesta-tipos-container">
+          <div className="cesta-tipos">
+            <span>Item</span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span>Resumo</span>
+            <span>Preço</span>
+          </div>
+        </div>
+        <div>
+          {itens.map((item, index) => (
+            <ItemCesta mock={item} />
+          ))}
+        </div>
+        <div className="cesta-total">
+          <span>Total: R$ 10,00</span>
+        </div>
+      </div>
+      <div className="cesta-bottom">
+        <div className="cesta-botoes">
+          <div className="cesta-button-voltar">
+            <img className="cesta-button-voltar-img" src={Arrow} />
+            <BotaoLink children="Voltar a tela inicial" to="/" />
+          </div>
+          <div className="cesta-button-comprar">
+            <BotaoLarge children="Comprar" to="minha-cesta/entrega"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CestaVazia () {
+  return(
+    <div>
+    <div className="cesta-disabled-body">
+      <div><span>Não tem nada aqui...</span></div>
+      <div><img className='cesta-disabled-image' src={HamburguerDisabled}/></div>
+      <div><span>Acho que você devia comprar um lanche!</span></div>
+      <div className="cesta-bottom">
+      <div className="cesta-button-voltar">
+            <img className="cesta-button-voltar-img" src={Arrow} />
+            <BotaoLink children="Voltar a tela inicial" to="/" />
+          </div>
+      </div>
+    </div>
+    </div>
+  )
+
+}
 
 function Cesta() {
 
@@ -48,8 +106,7 @@ function Cesta() {
       id: 2,
     }
   ]);
-
-  return (
+  return(
     <div className="Cesta">
       <div className="cesta-header">
         <div className="cesta-breadcrumbs">
@@ -58,38 +115,12 @@ function Cesta() {
         <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       </div>
       <div className="cesta-body">
-        <div className="cesta-tipos-container">
-          <div className="cesta-tipos">
-            <span>Item</span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span>Resumo</span>
-            <span>Preço</span>
-          </div>
-        </div>
-        <div>
-          {mock.map((mock, index) => (
-            <ItemCesta mock={mock} />
-          ))}
-        </div>
-        <div className="cesta-total">
-          <span>Total: R$ 10,00</span>
-        </div>
-      </div>
-      <div className="cesta-bottom">
-        <div className="cesta-botoes">
-          <div className="cesta-button-voltar">
-            <img className="cesta-button-voltar-img" src={Arrow} />
-            <BotaoLink children="Voltar a tela inicial" to="/" />
-          </div>
-          <div className="cesta-button-comprar">
-            <BotaoLarge children="Comprar" to="minha-cesta/entrega"/>
-          </div>
-        </div>
+      <CestaVazia />
       </div>
     </div>
-  );
+  )
+
+
 }
 
 export default Cesta;

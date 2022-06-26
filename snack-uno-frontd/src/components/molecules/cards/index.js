@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './index.css'
+import Pizza from '../../../assets/pizza.jpg'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,8 +26,7 @@ type Props = {
   mock?: Array,
 };
 function Cards({ mock }: Props) {
-  console.log(mock)
-
+ // console.log('cards', mock)
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -38,15 +38,15 @@ function Cards({ mock }: Props) {
           <CardMedia
             component="img"
             height="250"
-            image={mock.imagem}
+            image={mock.image}
             alt="Paella dish"
             className='cards-imagem'
           />
 
           <CardActions disableSpacing className='cards-body'>
             <div className='cards-text'>
-              <span className='cards-titulo'>{mock.nome}</span>
-              <span className='cards-preco'>R${mock.preco}</span>
+              <span className='cards-titulo'>{mock.name}</span>
+              <span className='cards-preco'>R${mock.price}</span>
             </div>
 
             <ExpandMore

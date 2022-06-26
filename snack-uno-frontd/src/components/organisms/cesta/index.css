@@ -27,6 +27,15 @@
   font-weight: 700;
   font-size: 18px;
 }
+.cesta-disabled-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cesta-disabled-image {
+  height: 250px;
+    filter: grayscale(1);
+}
 .cesta-bottom {
   display: flex;
   flex-direction: column;

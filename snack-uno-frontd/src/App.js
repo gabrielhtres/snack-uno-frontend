@@ -1,7 +1,12 @@
 import * as React from 'react';
 import './App.css';
 import Inicial from './components/organisms/inicial/index.js'
+import axios from 'axios'
+
+
+
 function App() {
+  
   let [mock] = React.useState([
     {
       nome: 'alguma comida',
@@ -40,9 +45,21 @@ function App() {
     },
 
   ]);
+
+  const [Rest, setRest] = React.useState([]);
+  const [Prod, setProd] = React.useState([]);
+
+  const restaurantes = axios.get(`http://52.91.200.181/restaurants`)
+  const produtos = axios.get(`http://52.91.200.181/products`)
+
+  Promise.all([restaurantes, produtos]).then(function (values) {
+    setRest(values[0].data.message);
+    setProd(values[1].data.message);
+  });
+
   return (
     <div className="App">
-      <Inicial />
+      <Inicial Restaurantes={Rest} Produtos={Prod} />
     </div>
   );
 }
