@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Cadastro from './components/organisms/cadastro/index'
 import EntregaPagamento from './components/organisms/entregaPagamento/index'
 import Login from './components/organisms/login/index'
-
+import Ajuda from './components/organisms/ajuda/index'
+import MinhaConta from './components/organisms/minhaConta/index'
 import Navegacao from './components/molecules/navegacao/index.js'
 import {
   BrowserRouter,
@@ -16,10 +17,13 @@ import {
 import Cesta from './components/organisms/cesta/index.js'
 import Fab from '@mui/material/Fab';
 import HelpIcon from '@mui/icons-material/Help';
+import { Provider } from 'react-redux';
+import { Store } from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={Store}>
     <BrowserRouter>
     <Navegacao />
       <Routes>
@@ -28,6 +32,8 @@ root.render(
         <Route path="login" element={<Login />} />
         <Route path="minha-cesta" element={<Cesta />} />
         <Route path="minha-cesta/entrega" element={<EntregaPagamento />} />
+        <Route path="ajuda" element={<Ajuda />} />
+        <Route path="minha-conta" element={<MinhaConta />} />
       </Routes>
       <div className="ajuda-float">
         <Fab color="primary" variant="extended" size="medium">
@@ -36,6 +42,7 @@ root.render(
         </Fab>
       </div>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
