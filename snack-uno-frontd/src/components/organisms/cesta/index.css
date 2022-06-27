@@ -46,6 +46,7 @@
 }
 .cesta-button-voltar {
   padding-bottom: 10px;
+  padding-top: 40px;
   display: flex;
   align-items: center;
   text-align: center;

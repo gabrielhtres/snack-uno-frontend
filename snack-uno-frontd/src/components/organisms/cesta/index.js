@@ -96,6 +96,7 @@ function Cesta(props) {
     },
 
   ]);
+  let [mostrarCesta, setMostrar]= React.useState(true);
 
   let [breadcrumb] = React.useState([
     {
@@ -130,8 +131,8 @@ function Cesta(props) {
         <div className="" onClick={alterarState}><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       </div>
       <div className="cesta-body">
-      <CestaCheia itens={mock}/>
-      <CestaVazia />
+        {mostrarCesta ?<CestaCheia itens={mock}/> : <CestaVazia />}
+  
       </div>
     </div>
   )
