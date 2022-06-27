@@ -1,33 +1,17 @@
 import * as React from 'react';
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
-import Cards from '../../molecules/cards/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js';
-import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import Hamburguer from '../../../assets/hamburguer.png'
+import Hamburguer from '../../../assets/hamburguer-v.png'
 import './index.css'
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import FolderIcon from '@mui/icons-material/Folder';
-import DeleteIcon from '@mui/icons-material/Delete';
+import TextField from '@mui/material/TextField';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import BotaoLarge from '../../atoms/botaoLarge/index.js'
+import BotaoLink from '../../atoms/botaoLink/index.js'
 
-
-const Demo = styled('div')(({ theme }) => ({
-  backgroundColor: theme.palette.background.paper,
-}));
 function Ajuda() {
   let [breadcrumb] = React.useState([
     {
@@ -61,6 +45,13 @@ function Ajuda() {
       id: 4,
     }
   ]);
+  const [values, setValues] = React.useState({
+    amount: '',
+  })
+  const handleChange =
+    (prop) => (event) => {
+      setValues({ ...values, [prop]: event.target.value });
+    };
   return (
     <div className="Ajuda">
       <div className='ajuda-header'>
@@ -73,54 +64,56 @@ function Ajuda() {
       </div>
       <div className='ajuda-body'>
         <div className='ajuda-body-perguntas'>
-          <div>Peguntas frequentes</div>
+          <span className='perguntas-title'>Peguntas frequentes</span>
           <div className="ajuda-body-perguntas-list">
-
-              <List dense sx={{ bgcolor: 'background.paper' }}style={{borderRadius: 8}}>
-                {list.map((text, index) => (
-                  <ListItemButton className="ajuda-body-perguntas-list-item" >
-
-                    <ArrowForwardIosIcon fontSize="small" color="disabled"/>
-
-
-                    <ListItemText
-                      className="ajuda-body-perguntas-list-text"
-                      primary={text.pergunta}
-                    />
-                  </ListItemButton>
-                ))}
-              </List>
-
+            <List dense sx={{ bgcolor: 'background.paper' }} style={{ borderRadius: 8, padding: '15px 10px', margin: '12px 0 20px 0' }}>
+              {list.map((text, index) => (
+                <ListItemButton className="ajuda-body-perguntas-list-item" >
+                  <ArrowForwardIosIcon fontSize="small" color="disabled" />
+                  <ListItemText
+                    className="ajuda-body-perguntas-list-text"
+                    primary={text.pergunta}
+                  />
+                </ListItemButton>
+              ))}
+            </List>
           </div>
           <div className="ajuda-body-perguntas-contato">
-            <div>Equipe tecnica</div>
-            <div>fone</div>
-            <div>email</div>
+            <span className='perguntas-contato-title'>Equipe técnica SnackUno</span>
+            <span>snakuno@email.com</span>
+            <span>(49) 9 9999-9999</span>
           </div>
         </div>
-        <div className='ajuda-body-hamburguer'>
+        <div className='ajuda-body-hamburger'>
           <div ><img className="ajuda-body-hamburger-img" src={Hamburguer} /></div>
         </div>
         <div className='ajuda-body-duvida'>
           <div>
-            <div>ainda tem duvida</div>
-            <div>input</div>
+            <span className='duvida-text'>Ainda tem dúvida? Deixe sua pergunta</span>
+            <div className='ajuda-body-input'>
+              <TextField fullWidth
+                id="filled-multiline-static"
+                multiline
+                rows={4}
+                placeholder="Onde eu encontro..?"
+                variant="outlined"
+              />
+            </div>
+
           </div>
           <div>
-            <div>email</div>
-            <div>input</div>
+            <span className='duvida-text'>Insira seu email, para ser notificado quando sua dúvida for respondida!</span>
+            <div className='ajuda-body-input'><TextField Multiline rows={2} fullWidth id="outlined-basic"
+              placeholder="meuemail@email.com" variant="outlined" /></div>
           </div>
-          <div>button</div>
+          <div><BotaoLarge children="Enviar dúvida" /></div>
         </div>
       </div>
-      <div>
-        <div>button</div>
+      <div className='ajuda-bottom-button-voltar'>
+        <div className='bottom-button-voltar'><BotaoLink children="Voltar a tela inicial" to="/" /></div>
       </div>
     </div>
   );
 }
 
 export default Ajuda;
-
-
-

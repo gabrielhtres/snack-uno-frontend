@@ -2,18 +2,66 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 70px 0;
 }
+
+.ajuda-body-duvida {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.ajuda-body-perguntas {
+  text-align: center;
+}
+
 .ajuda-body-perguntas-list-item {
   padding: 9px 40px !important;
 }
+
 .ajuda-body-perguntas-list-text {
   padding-left: 10px;
 }
+
 .ajuda-body-perguntas-contato {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.perguntas-contato-title {
+  font-weight: 700;
+}
+
+.ajuda-body-hamburger {
+  margin: 0 60px;
+}
+
 .ajuda-body-hamburger-img {
   height: 16rem;
+}
+
+.perguntas-title {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.duvida-text {
+  width: 293px;
+  font-weight: 700;
+}
+
+.ajuda-body-input {
+  margin: 10px 0px;
+}
+
+.ajuda-bottom-button-voltar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-button-voltar {
+  padding: 50px 175px 0 0;
 }

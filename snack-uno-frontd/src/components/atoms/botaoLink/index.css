@@ -3,3 +3,13 @@
   color: #8C0400;
   font-weight: 700;
 }
+
+.button-voltar {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+}
+.button-voltar-img {
+  height: 20px;
+  padding-right: 5px;
+}

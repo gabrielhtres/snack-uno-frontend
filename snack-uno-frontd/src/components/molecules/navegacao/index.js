@@ -28,6 +28,15 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import CloseIcon from '@mui/icons-material/Close';
+import ImageIcon from '@mui/icons-material/Image';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -89,7 +98,7 @@ const theme = createTheme({
     }
   },
 });
-
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
 export default function Navegacao() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -167,6 +176,73 @@ export default function Navegacao() {
     </Menu>
   );
 
+
+
+
+
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer =
+    (anchor: Anchor, open: Boolean) =>
+      (event) => {
+        if (
+          event.type === 'keydown' &&
+          ((event).key === 'Tab' ||
+            (event).key === 'Shift')
+        ) {
+          return;
+        }
+
+        setState({ ...state, [anchor]: open });
+      };
+
+  const list = (anchor: Anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 350, height: '100%' }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <div className='open-hamburguer-expand'>
+        <List>
+          <ListItem  >
+            <ListItemButton sx={{ pl: 4 }}>
+              <ListItemIcon>
+                <CloseIcon  sx={{ color: 'white' }}/>
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+          {[
+            { text: 'Início', href: '/', icon: ImageIcon },
+            { text: 'Lanches', href: '/' },
+            { text: 'Estabelecimentos', href: '/' },
+            { text: 'Minha conta', href: '/minha-conta' },
+            { text: 'Sobre', href: '/' }
+          ].map((item, index) => (
+            <ListItem key={index} >
+              <ListItemButton href={item.href}>
+                <ListItemIcon>
+                </ListItemIcon>
+                <ListItemText primary={
+
+                  <Typography variant="BUTTON TEXT" >
+                    {item.text}
+                  </Typography>
+
+                } style={{ color: 'white', fontWeight: 700 }} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List></div>
+
+    </Box>
+  );
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar theme={theme} position="static">
@@ -177,9 +253,19 @@ export default function Navegacao() {
             color="inherit"
             aria-label="open drawer"
             sx={{ mr: 2 }}
+            onClick={toggleDrawer('left', true)}
           >
             <MenuIcon />
           </IconButton>
+
+          <Drawer
+
+            anchor={'left'}
+            open={state['left']}
+            onClose={toggleDrawer('left', false)}
+          >
+            {list('left')}
+          </Drawer>
           <img src={logo} className="logo" alt="logo" />
           <Typography
             variant="h6"
@@ -202,7 +288,7 @@ export default function Navegacao() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
             <IconButton size="large" aria-label="show 4 new mails" color="inherit" href='/minha-cesta'>
-              <StyledBadge badgeContent={4} color="success">
+              <StyledBadge badgeContent={3} color="success">
                 <div className="minha-cesta-container">
                   <img src={cesta} className="cesta" alt="cesta" />
                 </div>

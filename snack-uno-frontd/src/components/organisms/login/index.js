@@ -60,7 +60,7 @@ function Login(props) {
           clickButton('logado')
           return window.location.href = 'http://localhost:3000/'
         } else {
-          setErrorServer(`Estamos com problemas,\n recarregue a página ou volte mais tarde`)
+          setErrorServer(`Estamos com problemas, volte mais tarde`)
         }
       })
       .catch(error => {
@@ -69,7 +69,7 @@ function Login(props) {
           setError(true)
         }
         else {
-          setErrorServer('Estamos com problemas, recarregue a página ou volte mais tarde')
+          setErrorServer(`Estamos com problemas, volte mais tarde`)
         }
         
       });

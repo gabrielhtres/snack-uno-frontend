@@ -7,7 +7,6 @@ import HambuguerLeft from '../../../assets/hamburguer-left.png'
 import HambuguerRight from '../../../assets/hamburguer-right.png'
 import QR from '../../../assets/QR.png'
 import hambload from '../../../assets/hambload.gif'
-import Arrow from '../../../assets/arrow.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
@@ -157,8 +156,7 @@ export default function EntregaPagamento() {
         <div className="entrega-bottom">
           <div className="entrega-botoes">
             <div className="entrega-button-voltar">
-              <img className="entrega-button-voltar-img" src={Arrow} />
-              <BotaoLink children="Voltar a tela inicial" to="/" />
+              <BotaoLink children="Voltar a cesta" to="/minha-cesta" />
             </div>
             <div className="entrega-button-comprar" onClick={handleOpen}>
               <BotaoLarge children="Comprar" />

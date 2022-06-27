@@ -1,6 +1,5 @@
 import * as React from 'react';
 import './index.css'
-import Arrow from '../../../assets/arrow.png'
 import HamburguerDisabled from '../../../assets/hamburguer-disabled.png'
 import Breadcrumb from '../../atoms/breadcrumb/index.js'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
@@ -36,7 +35,6 @@ export function CestaCheia ({itens}: Props) {
       <div className="cesta-bottom">
         <div className="cesta-botoes">
           <div className="cesta-button-voltar">
-            <img className="cesta-button-voltar-img" src={Arrow} />
             <BotaoLink children="Voltar a tela inicial" to="/" />
           </div>
           <div className="cesta-button-comprar">
@@ -57,7 +55,6 @@ export function CestaVazia () {
       <div><span>Acho que você devia comprar um lanche!</span></div>
       <div className="cesta-bottom">
       <div className="cesta-button-voltar">
-            <img className="cesta-button-voltar-img" src={Arrow} />
             <BotaoLink children="Voltar a tela inicial" to="/" />
           </div>
       </div>
