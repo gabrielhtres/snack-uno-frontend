@@ -109,7 +109,7 @@ function Cesta() {
     <div className="Cesta">
       <div className="cesta-header">
         <div className="cesta-breadcrumbs">
-          <Breadcrumb mock={breadcrumb} />
+          <Breadcrumb breadcrumb={breadcrumb} />
         </div>
         <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       </div>

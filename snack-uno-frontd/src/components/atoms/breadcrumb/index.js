@@ -3,11 +3,12 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import HomeIcon from '@mui/icons-material/Home';
 
 type Props = {
-  mock?: Array,
+  breadcrumb?: Array,
 };
-export default function Breadcrumb({ mock }: Props) {
+export default function Breadcrumb({ breadcrumb }: Props) {
   return (
     <div style={{ padding: '25px 45px 0' }}>
       <Stack spacing={2}>
@@ -15,8 +16,9 @@ export default function Breadcrumb({ mock }: Props) {
           separator={<NavigateNextIcon fontSize="small" />}
           aria-label="breadcrumb"
         >
-          {mock.map((mock, index) => (
-            <Link underline="hover" key={index} color={mock.color} href={mock.href} >
+          {breadcrumb.map((mock, index) => (
+            <Link underline="hover" key={index} color={mock.color} href={mock.href} sx={{ display: 'flex', alignItems: 'center' }}>
+              {mock.text === 'Inicial' ? <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" /> : ''}
               {mock.text}
             </Link>
           ))}

@@ -555,7 +555,11 @@ function Inicial({ Restaurantes, Produtos }: Props) {
 
   return (
     <div className="Inicial">
-      <div></div>
+
+      <div className="inicial-breadcrumbs">
+            <Breadcrumb breadcrumb={breadcrumb} />
+         
+      </div>
       <div className='inicial-header'>
         <div className='inicial-titule'>
           <TituloLinha children='Restaurantes' size={'2em'} esq="none" widths={'66%'} />

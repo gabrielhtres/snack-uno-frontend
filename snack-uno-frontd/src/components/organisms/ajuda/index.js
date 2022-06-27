@@ -56,7 +56,7 @@ function Ajuda() {
     <div className="Ajuda">
       <div className='ajuda-header'>
         <div className="ajuda-breadcrumbs">
-          <Breadcrumb mock={breadcrumb} />
+          <Breadcrumb breadcrumb={breadcrumb} />
         </div>
         <div className='ajuda-titule'>
           <TituloLinha children='Ajuda' size={'2em'} widths={'75%'} />

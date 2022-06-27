@@ -92,7 +92,7 @@ export default function EntregaPagamento() {
       <div>
         <div className="entrega-header">
           <div className="entrega-breadcrumbs">
-            <Breadcrumb mock={breadcrumb} />
+            <Breadcrumb breadcrumb={breadcrumb} />
           </div>
           <div className=""><TituloLinha children={'Local de Entrega'} widths="70%" /></div>
         </div>
