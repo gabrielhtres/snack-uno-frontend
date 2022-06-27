@@ -7,8 +7,10 @@ import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
 import ItemCesta from '../../molecules/itemCesta/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js'
-
-export function CestaCheia (itens) {
+type Props = {
+  itens?: Array,
+};
+export function CestaCheia ({itens}: Props) {
   return (
     <div className='Cesta-Cheia'>
       <div className="cesta-body">
@@ -115,6 +117,7 @@ function Cesta() {
         <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       </div>
       <div className="cesta-body">
+      <CestaCheia itens={mock}/>
       <CestaVazia />
       </div>
     </div>

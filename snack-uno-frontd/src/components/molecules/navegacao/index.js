@@ -201,7 +201,7 @@ export default function Navegacao() {
           </Search>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton size="large" aria-label="show 4 new mails" color="inherit" href='/minha-cesta'>
               <StyledBadge badgeContent={4} color="success">
                 <div className="minha-cesta-container">
                   <img src={cesta} className="cesta" alt="cesta" />
@@ -227,6 +227,7 @@ export default function Navegacao() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              href='/minha-conta'
             >
 
               <div className="minha-cesta-container">

@@ -36,7 +36,7 @@ root.render(
         <Route path="minha-conta" element={<MinhaConta />} />
       </Routes>
       <div className="ajuda-float">
-        <Fab color="primary" variant="extended" size="medium">
+        <Fab color="primary" variant="extended" size="medium" href="/ajuda">
           <HelpIcon sx={{ mr: 1 }} />
           Ajuda
         </Fab>

@@ -4,14 +4,12 @@ import Cards from '../../molecules/cards/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js';
 import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import hambload from '../../../assets/hambload.gif'
 import Next from '../../../assets/next.png'
 import NextL from '../../../assets/nextL.png'
 import NextDisable from '../../../assets/nextdisable.png'
 import NextLDisable from '../../../assets/nextLdisabled.png'
 import './index.css'
-import TextField from '@mui/material/TextField';
 type Props = {
   Restaurantes?: Array,
   Produtos?: Array,
@@ -31,11 +29,13 @@ function Inicial({ Restaurantes, Produtos }: Props) {
       lanches: [
         {
           name: 'Pastel',
+          description: 'Pastel',
           price: '10,00',
-          quantidade: 4,
+          stock: 4,
           flavor: ['calabreza', 'queijo', 'frango'],
           image: 'https://www.sabornamesa.com.br/media/k2/items/cache/c501a702ef05e90d163a1eeeb1633357_XL.jpg',
           id_product: 1,
+          id_restaurant: 1,
         },
         {
           name: 'Pão de queijo',
@@ -449,9 +449,7 @@ function Inicial({ Restaurantes, Produtos }: Props) {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000)
+    if(Produtos.length !== 0)setLoading(false);
   });
 
   return (
@@ -463,7 +461,8 @@ function Inicial({ Restaurantes, Produtos }: Props) {
         </div>
       </div>
       {loading
-        ? <div>carregandooooooooooooooooo</div>
+        ? <div className='inicial-loading'><img className="inicial-loading-hamburguer" src={hambload} />
+        <span> Estamos trazendo as informações</span></div>
 
         :
         <div className='inicial-body'>

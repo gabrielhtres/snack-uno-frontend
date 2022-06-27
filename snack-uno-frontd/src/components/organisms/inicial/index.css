@@ -2,6 +2,14 @@
     display: flex;
     margin: 5px;
 }
-.carouselScrool {
-    
+.inicial-loading {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inicial-loading-hamburguer {   
+     mix-blend-mode: multiply;
+    height: 335px;
 }
