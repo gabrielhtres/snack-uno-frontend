@@ -12,7 +12,7 @@ import './index.css'
 import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import axios from 'axios'
 import { bindActionCreators } from 'redux';
-import { clickButton } from '../../../actions';
+import { clickUser } from '../../../actions';
 import { connect } from 'react-redux';
 
 function Login(props) {
@@ -29,8 +29,9 @@ function Login(props) {
   const [errorServer, setErrorServer] = React.useState('');
 
   const {
-    clickButton
+    clickUser
   } = props;
+  console.log('clickUser',props)
 
 
   const handlePassword = (prop) => (event) => {
@@ -57,11 +58,14 @@ function Login(props) {
     Promise.all([login])
       .then((response) => {
         if (response[0].status === 201) {
-          clickButton('logado')
+          clickUser('logado')
           return window.location.href = 'http://localhost:3000/'
-        } else {
+        } if (response[0].status === 204) {
+          setErrorServer(`Estamos com problemas, volte mais tarde`)
+        }else {
           setErrorServer(`Estamos com problemas, volte mais tarde`)
         }
+
       })
       .catch(error => {
         if(error.response.status === 401) {
@@ -142,6 +146,6 @@ const mapStateToProps = store => ({
 
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ clickButton }, dispatch);
+  bindActionCreators({ clickUser }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

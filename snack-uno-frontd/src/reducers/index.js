@@ -1,8 +1,8 @@
 import { userConnect } from './userConnect.js';
-import { clickReducer } from './clickReducer';
+import { userLogado } from './userLogado';
 
 import { combineReducers } from 'redux';
 export const Reducers = combineReducers({
-  clickState: clickReducer,
+  clickState: userLogado,
   otherState: userConnect
 });
