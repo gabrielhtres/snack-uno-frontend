@@ -6,9 +6,15 @@ import BotaoLarge from '../../atoms/botaoLarge/index.js'
 import BotaoLink from '../../atoms/botaoLink/index.js'
 import ItemCesta from '../../molecules/itemCesta/index.js'
 import TituloLinha from '../../atoms/tituloLinha/index.js'
+import { bindActionCreators } from 'redux';
+import { clickUser } from '../../../actions';
+import { connect } from 'react-redux';
+
+
 type Props = {
   itens?: Array,
 };
+
 export function CestaCheia ({itens}: Props) {
   return (
     <div className='Cesta-Cheia'>
@@ -64,7 +70,7 @@ export function CestaVazia () {
 
 }
 
-function Cesta() {
+function Cesta(props) {
 
   let [mock] = React.useState([
     {
@@ -105,13 +111,23 @@ function Cesta() {
       id: 2,
     }
   ]);
+
+  const {
+    clickUser
+  } = props;
+  console.log('props',props)
+
+  const alterarState = () => {
+    clickUser('logggg')
+  }
+
   return(
     <div className="Cesta">
       <div className="cesta-header">
         <div className="cesta-breadcrumbs">
           <Breadcrumb breadcrumb={breadcrumb} />
         </div>
-        <div className=""><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
+        <div className="" onClick={alterarState}><TituloLinha children={'Minha Cesta'} widths="75%" /></div>
       </div>
       <div className="cesta-body">
       <CestaCheia itens={mock}/>
@@ -122,5 +138,12 @@ function Cesta() {
 
 
 }
+const mapStateToProps = store => ({
+  newValue: store.clickState.newValue
+});
 
-export default Cesta;
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ clickUser }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cesta)

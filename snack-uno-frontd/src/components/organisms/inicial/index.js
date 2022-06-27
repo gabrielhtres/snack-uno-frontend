@@ -555,10 +555,8 @@ function Inicial({ Restaurantes, Produtos }: Props) {
 
   return (
     <div className="Inicial">
-
       <div className="inicial-breadcrumbs">
-            <Breadcrumb breadcrumb={breadcrumb} />
-         
+        <Breadcrumb breadcrumb={breadcrumb} />
       </div>
       <div className='inicial-header'>
         <div className='inicial-titule'>

@@ -1,13 +1,15 @@
-import { CLICK_UPDATE_VALUE } from '../actions/actionsTypes.js';
+import { MINHA_CESTA_VALUE } from '../actions/actionsTypes.js';
 const initialState = {
-  userConnect: true
+  newValue: []
 };
+
 export const minhaCesta = (state = initialState, action) => {
+  console.log(action)
   switch (action.type) {
-    case CLICK_UPDATE_VALUE:
+    case MINHA_CESTA_VALUE:
       return {
         ...state,
-        userConnect: action.userConnect
+        newValue: action.newValue
       };
     default:
       return state;

@@ -13,7 +13,9 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import { blue } from '@mui/material/colors';
-
+import { bindActionCreators } from 'redux';
+import { clickMinhaCesta } from '../../../actions';
+import { connect } from 'react-redux';
 
 
 const ExpandMore = styled((props) => {
@@ -26,15 +28,12 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-type Props = {
-  mock?: Array,
-};
-function Cards({ mock }: Props) {
-  // console.log('cards', mock)
+
+function Cards(props) {
   const [expanded, setExpanded] = React.useState(false);
-  const [value, setValue] = React.useState('');
+  const [valueFlavor, setValue] = React.useState('');
 
-
+console.log(valueFlavor)
   const handleChange = (event) => {
     setValue(event.target.value);
   };
@@ -42,21 +41,37 @@ function Cards({ mock }: Props) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const {
+    clickMinhaCesta
+  } = props;
+
+  const [adicionado, setAdicionado] = React.useState('');
+
+  const adicionaraCesta = (valueFlavor, item) => {
+console.log('adicionado', valueFlavor, item)
+    //setAdicionado(valueFlavor)
+    //clickMinhaCesta({valueFlavor })
+  }
+
+  
+
+
   return (
     <div className='Cards'>
       <Card className='cards-content' >
         <CardMedia
           component="img"
           height="250"
-          image={mock.image}
+          image={props.mock.image}
           alt="Paella dish"
           className='cards-imagem'
         />
 
         <CardActions disableSpacing className='cards-body'>
           <div className='cards-text'>
-            <span className='cards-titulo'>{mock.name}</span>
-            <span className='cards-preco'>R${mock.price}</span>
+            <span className='cards-titulo'>{props.mock.name}</span>
+            <span className='cards-preco'>R${props.mock.price}</span>
           </div>
 
           <ExpandMore
@@ -73,11 +88,11 @@ function Cards({ mock }: Props) {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
-              value={value}
+              defaultValue={props.mock.flavor[0]}
+              value={valueFlavor}
               onChange={handleChange}
             >
-              {mock.flavor.map((fl, ix) => (
-
+              {props.mock.flavor.map((fl, ix) => (
                 <FormControlLabel
                   value={fl}
                   control={
@@ -90,14 +105,26 @@ function Cards({ mock }: Props) {
                   label={fl} />
               ))}
             </RadioGroup>
-            <Button variant="contained" color="success">
-              Comprar
-            </Button>
 
-          </CardContent>
+          </CardContent> 
+          <div >
+            <div>
+              <Button size="small" variant="contained" color="success" onClick={() => adicionaraCesta(valueFlavor, props.mock)}>
+                Comprar
+              </Button></div>
+            </div>
         </Collapse>
       </Card>
     </div>
   );
 }
-export default Cards;
+
+const mapStateToProps = store => ({
+  newValue: store.minhaCestState.newValue
+});
+
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ clickMinhaCesta }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cards)

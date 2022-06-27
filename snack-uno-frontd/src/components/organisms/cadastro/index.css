@@ -5,12 +5,15 @@
     height: 100%;
     width: 450px;
     background-image: linear-gradient(#8C0400, #FF7A00);
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
 }
 .cadastro-lateral-imagem {
     text-align: center;
 }
 .imagem-lado {
-    height: 300px;
+    height: 210px;
 }
 .cadastro-inputs-group {
     background-color: white;
@@ -47,8 +50,17 @@
     font-style: normal;
 }
 .cadastro-linha {
-    border: 3px solid;
+    border: 2px solid;
     width: 115px;
+}
+@media only screen and (min-width: 1371px) {
+.cadastro-lateral-imagem {
+    text-align: center;
+    padding-bottom: 163px;
+}
+.cadastro-text-linha {
+    padding-bottom: 20px;
+}
 }
 @media only screen and (max-width: 1370px) {
     .imagem-lado {

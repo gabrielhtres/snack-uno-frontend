@@ -49,13 +49,13 @@ function App() {
   const [Rest, setRest] = React.useState([]);
   const [Prod, setProd] = React.useState([]);
 
-  const restaurantes = axios.get(`http://52.91.200.181/restaurants`)
-  const produtos = axios.get(`http://52.91.200.181/products`)
+  //const restaurantes = axios.get(`http://52.91.200.181/restaurants`)
+  //const produtos = axios.get(`http://52.91.200.181/products`)
 
-  Promise.all([restaurantes, produtos]).then(function (values) {
-    setRest(values[0].data.message);
-    setProd(values[1].data.message);
-  });
+ // Promise.all([restaurantes, produtos]).then(function (values) {
+ //   setRest(values[0].data.message);
+  //  setProd(values[1].data.message);
+  //});
 
   return (
     <div className="App">
